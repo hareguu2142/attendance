@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>출결 프로그램</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>출결 프로그램</h1>
+        
+        <div class="info-panel">
+            <div id="attendance-summary"></div>
+            <div id="last-scanned-info"></div>
+        </div>
+        
+        <div class="controls">
+            <button id="start-btn">시작(Start)</button>
+            <button id="exit-btn">종료(Exit)</button>
+            <button id="save-btn">저장(Save)</button>
+            <button id="upload-btn">표 구성하기</button>
+            <input type="file" id="csv-file" accept=".csv" style="display: none;">
+            <a href="/setting" class="btn">설정</a>
+        </div>
+
+        <div class="scanner-status">
+            <p>스캔 상태: <span id="status">비활성화</span></p>
+        </div>
+
+        <div class="student-table">
+            <table id="attendance-table">
+                <!-- 표 내용은 JavaScript로 동적 생성됩니다 -->
+            </table>
+        </div>
+
+        <div class="scanner-data">
+            <h2>스캔된 데이터</h2>
+            <ul id="data-list">
+                <!-- 스캔된 바코드 데이터가 여기에 표시됩니다 -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
